@@ -658,8 +658,8 @@ $essentialtweaks.Add_Click({
     Write-Host "Stopping and disabling Superfetch service..."
     Stop-Service "SysMain" -WarningAction SilentlyContinue
     Set-Service "SysMain" -StartupType Disabled
-    Write-Host "Setting BIOS time to UTC..."
-    Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInformation" -Name "RealTimeIsUniversal" -Type DWord -Value 1
+    # Write-Host "Setting BIOS time to UTC..."
+    # Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInformation" -Name "RealTimeIsUniversal" -Type DWord -Value 1
     Write-Host "Disabling Hibernation..."
     Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Session Manager\Power" -Name "HibernteEnabled" -Type Dword -Value 0
     If (!(Test-Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenuSettings")) {
@@ -973,7 +973,7 @@ $Bloatware = @(
     "Microsoft.BingTravel"
     "Microsoft.MinecraftUWP"
     "Microsoft.GamingServices"
-    # "Microsoft.WindowsReadingList"
+    "Microsoft.WindowsReadingList"
     "Microsoft.GetHelp"
     "Microsoft.Getstarted"
     "Microsoft.Messaging"
@@ -1042,8 +1042,8 @@ $Bloatware = @(
     #Optional: Typically not removed but you can if you need to for some reason
     "*Microsoft.Advertising.Xaml*"
     #"*Microsoft.MSPaint*"
-    #"*Microsoft.MicrosoftStickyNotes*"
-    #"*Microsoft.Windows.Photos*"
+    "*Microsoft.MicrosoftStickyNotes*"
+    "*Microsoft.Windows.Photos*"
     #"*Microsoft.WindowsCalculator*"
     #"*Microsoft.WindowsStore*"
 )
